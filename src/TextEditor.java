@@ -48,14 +48,7 @@ public class TextEditor extends JFrame implements ActionListener{
 		fontSizeSpinner = new JSpinner();
 		fontSizeSpinner.setPreferredSize(new Dimension(50, 25));
 		fontSizeSpinner.setValue(20);
-		fontSizeSpinner.addChangeListener(new ChangeListener() {
-
-			@Override
-			public void stateChanged(ChangeEvent e) {
-
-				textArea.setFont(new Font(textArea.getFont().getFamily(), Font.PLAIN, (int)fontSizeSpinner.getValue()));
-			}
-		});
+		fontSizeSpinner.addChangeListener((e) -> textArea.setFont(new Font(textArea.getFont().getFamily(), Font.PLAIN, (int)fontSizeSpinner.getValue())));
 		
 		fontColorButton = new JButton("Color");
 		fontColorButton.addActionListener(this);
